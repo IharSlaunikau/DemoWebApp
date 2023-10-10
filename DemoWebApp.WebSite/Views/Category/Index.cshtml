@@ -1,0 +1,12 @@
+@* @model IEnumerable<DemoWebApp.DAL.Models.Category> *@
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h2>Categories</h2>
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li>@cat.Name</li>
+    }
+</ul>
