@@ -1270,3 +1270,39 @@ LEFT JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
 2023-10-20 22:15:53.367 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44344/_vs/browserLink - -
 2023-10-20 22:15:53.389 +03:00 [DBG] Connection ID "18086456109425491983" disconnecting.
 2023-10-20 22:15:53.389 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44344/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.1193ms
+2023-10-20 23:10:35.2338413 +03:00 [INF] [] Starting application at D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\...
+2023-10-20 23:10:38.0876991 +03:00 [INF] [] Current configuration: NorthwindConnection = null
+2023-10-20 23:10:38.1040418 +03:00 [INF] [] Product settings: MaxAmount = 0
+2023-10-20 23:10:38.9464131 +03:00 [FTL] [Microsoft.AspNetCore.Hosting.Diagnostics] Application startup exception
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at DemoWebApp.WebSite.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\Startup.cs:line 57
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-10-20 23:10:39.8043533 +03:00 [FTL] [] Application startup failed
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   at DemoWebApp.WebSite.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\Startup.cs:line 57
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at DemoWebApp.WebSite.Program.Main(String[] args) in D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\Program.cs:line 43

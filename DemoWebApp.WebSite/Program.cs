@@ -21,14 +21,23 @@ public static class Program
         try
         {
             var appLocation = AppContext.BaseDirectory;
+
             Log.Information("Starting application at {AppLocation}...", appLocation);
 
             var host = CreateHostBuilder(args).Build();
 
-            var appConfiguration = host.Services.GetRequiredService<IOptions<AppSettings>>()?.Value;
-            if (appConfiguration != null)
+            var appSettings = host.Services.GetRequiredService<IOptions<AppSettings>>()?.Value;
+
+            if (appSettings != null)
             {
-                Log.Information("Current configuration: NorthwindConnection = {NorthwindConnection}", appConfiguration.NorthwindConnection);
+                Log.Information("Current configuration: NorthwindConnection = {NorthwindConnection}", appSettings.NorthwindConnection);
+            }
+
+            var productSettings = host.Services.GetRequiredService<IOptions<ProductSettings>>()?.Value;
+
+            if (productSettings != null)
+            {
+                Log.Information("Product settings: MaxAmount = {MaxAmount}", productSettings.MaxAmount);
             }
 
             host.Run();
@@ -48,5 +57,6 @@ public static class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-            });
+            })
+            .UseSerilog();
 }
