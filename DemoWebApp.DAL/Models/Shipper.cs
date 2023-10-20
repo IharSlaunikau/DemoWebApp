@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class Shipper
 {
-    public partial class Shipper
-    {
-        public Shipper()
-        {
-            Orders = new HashSet<Order>();
-        }
+    public int ShipperId { get; set; }
 
-        public int ShipperId { get; set; }
-        public string CompanyName { get; set; } = null!;
-        public string? Phone { get; set; }
+    public string CompanyName { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
-    }
+    public string Phone { get; set; }
+
+    public ICollection<Order> Orders { get; } = new HashSet<Order>();
 }

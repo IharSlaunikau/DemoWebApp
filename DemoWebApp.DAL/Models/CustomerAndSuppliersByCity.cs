@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class CustomerAndSuppliersByCity
 {
-    public partial class CustomerAndSuppliersByCity
-    {
-        public string? City { get; set; }
-        public string CompanyName { get; set; } = null!;
-        public string? ContactName { get; set; }
-        public string Relationship { get; set; } = null!;
-    }
+    public string City { get; set; }
+
+    public string CompanyName { get; set; }
+
+    public string ContactName { get; set; }
+
+    public string Relationship { get; set; }
 }

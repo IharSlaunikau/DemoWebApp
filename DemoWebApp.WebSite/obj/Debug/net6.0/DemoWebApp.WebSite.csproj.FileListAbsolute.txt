@@ -9,6 +9,8 @@ D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\Dem
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Azure.Core.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Azure.Identity.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Humanizer.dll
+D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Mapster.dll
+D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Mapster.Core.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\MessagePack.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\MessagePack.Annotations.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -31,7 +33,6 @@ D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\Dem
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -60,8 +61,6 @@ D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\Dem
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\NetTopologySuite.dll
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\NuGet.Common.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\NuGet.Configuration.dll

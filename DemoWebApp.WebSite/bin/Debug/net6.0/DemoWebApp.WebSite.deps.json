@@ -10,8 +10,11 @@
         "dependencies": {
           "DemoWebApp.BLL": "1.0.0",
           "DemoWebApp.DAL": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16"
+          "Mapster": "7.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "Microsoft.jQuery.Unobtrusive.Validation": "4.0.0",
+          "bootstrap": "5.3.2"
         },
         "runtime": {
           "DemoWebApp.WebSite.dll": {}
@@ -51,6 +54,7 @@
           }
         }
       },
+      "bootstrap/5.3.2": {},
       "Humanizer/2.14.1": {
         "dependencies": {
           "Humanizer.Core.af": "2.14.1",
@@ -588,6 +592,31 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "jQuery/1.8.0": {},
+      "jQuery.Validation/1.8.0.1": {
+        "dependencies": {
+          "jQuery": "1.8.0"
+        }
+      },
+      "Mapster/7.4.0": {
+        "dependencies": {
+          "Mapster.Core": "1.2.1"
+        },
+        "runtime": {
+          "lib/net6.0/Mapster.dll": {
+            "assemblyVersion": "7.4.0.0",
+            "fileVersion": "7.4.0.0"
+          }
+        }
+      },
+      "Mapster.Core/1.2.1": {
+        "runtime": {
+          "lib/net6.0/Mapster.Core.dll": {
+            "assemblyVersion": "1.2.1.0",
+            "fileVersion": "1.2.1.0"
           }
         }
       },
@@ -1161,64 +1190,51 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.11": {
+      "Microsoft.EntityFrameworkCore/7.0.12": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
+            "assemblyVersion": "7.0.12.0",
+            "fileVersion": "7.0.1223.47811"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
+            "assemblyVersion": "7.0.12.0",
+            "fileVersion": "7.0.1223.47811"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {},
-      "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {},
+      "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore": "7.0.12",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
+            "assemblyVersion": "7.0.12.0",
+            "fileVersion": "7.0.1223.47811"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.11": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.11"
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.12"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/7.0.11": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "NetTopologySuite": "2.5.0",
-          "NetTopologySuite.IO.SqlServerBytes": "2.1.0"
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
+            "assemblyVersion": "7.0.12.0",
+            "fileVersion": "7.0.1223.47811"
           }
         }
       },
@@ -1415,6 +1431,12 @@
           }
         }
       },
+      "Microsoft.jQuery.Unobtrusive.Validation/4.0.0": {
+        "dependencies": {
+          "jQuery": "1.8.0",
+          "jQuery.Validation": "1.8.0.1"
+        }
+      },
       "Microsoft.NET.StringTools/17.3.2": {
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -1609,28 +1631,6 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
-        }
-      },
-      "NetTopologySuite/2.5.0": {
-        "dependencies": {
-          "System.Memory": "4.5.5"
-        },
-        "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
-      "NetTopologySuite.IO.SqlServerBytes/2.1.0": {
-        "dependencies": {
-          "NetTopologySuite": "2.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
         }
       },
       "Newtonsoft.Json/13.0.1": {
@@ -2610,9 +2610,7 @@
       },
       "DemoWebApp.DAL/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "7.0.12"
         },
         "runtime": {
           "DemoWebApp.DAL.dll": {}
@@ -2639,6 +2637,13 @@
       "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
+    "bootstrap/5.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m0/GEaLwE35B8P1xScFhwAsQi5o6kWPzOVPdGkoFwv+5YjmbgXFPQai71N5APwRCU52ZO4vHYWJ5DYSqKKgivw==",
+      "path": "bootstrap/5.3.2",
+      "hashPath": "bootstrap.5.3.2.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2990,6 +2995,34 @@
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
     },
+    "jQuery/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "path": "jquery/1.8.0",
+      "hashPath": "jquery.1.8.0.nupkg.sha512"
+    },
+    "jQuery.Validation/1.8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cSBTW8FiNcFYy7h8jY38ffnJGia25HQH/z1TP3f8OKZhn1ZSGS7Bebz9nMevKbtsAjzHhDFp/Cq0cT+ixwiB5A==",
+      "path": "jquery.validation/1.8.0.1",
+      "hashPath": "jquery.validation.1.8.0.1.nupkg.sha512"
+    },
+    "Mapster/7.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RYGoDqvS4WTKIq0HDyPBBVIj6N0mluOCXQ1Vk95JKseMHEsbCXSEGKSlP95oL+s42IXAXbqvHj7p0YaRBUcfqg==",
+      "path": "mapster/7.4.0",
+      "hashPath": "mapster.7.4.0.nupkg.sha512"
+    },
+    "Mapster.Core/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
+      "path": "mapster.core/1.2.1",
+      "hashPath": "mapster.core.1.2.1.nupkg.sha512"
+    },
     "MessagePack/2.1.152": {
       "type": "package",
       "serviceable": true,
@@ -3144,47 +3177,40 @@
       "path": "microsoft.dotnet.scaffolding.shared/6.0.16",
       "hashPath": "microsoft.dotnet.scaffolding.shared.6.0.16.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/7.0.11": {
+    "Microsoft.EntityFrameworkCore/7.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-r7YGITjQ7v1hYtUXIavjSx+T1itKVPUFAIBN7HaKNjbR8x+gep8w9H3NEchglJOh1woZR4b2MhbSo2YFRZwZDg==",
-      "path": "microsoft.entityframeworkcore/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.7.0.11.nupkg.sha512"
+      "sha512": "sha512-HRge/bJ5SKMNeqybC4NnRwWZn69QBjVVoVmwhmJ8xgQ50Ye+jTOOf2mef/y4Lrq1HUeMg8cu+3JeFdnp+Y8skA==",
+      "path": "microsoft.entityframeworkcore/7.0.12",
+      "hashPath": "microsoft.entityframeworkcore.7.0.12.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IoOnhycZ0/VtLowf0HgB0cujxwksokzkS3/5108AHOcbntHUTqwxtCjG4E4FCly/45G+mxb+4PxBdFZhA49lwQ==",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512"
+      "sha512": "sha512-GDlY3DzUbpagqb0683NUM2RK9eJFjTfmlLJd5YtvzBf8T4dwanIOSjd2vN7dXJihyZ0JlYaCetyHgxzbrxiUOw==",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.12",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.12.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Qexum5safSSfijx6P1QSq5bVJPPTM/uf7lQmpL/shkiozEC/0FzqNaVUfFpbNN8zsO1jMFYbeDMF4cxJMlTT9w==",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512"
+      "sha512": "sha512-feFe61uKUNoHJfo9tnO65BTzcpWEYIr34xWikhYgZl5c9RiiUJLuCoTqoGc9fuuKy+xk9aUa1NwgDGMC4KmBig==",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.12",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.12.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+    "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yHEEyah1XARStV1SJOsdKj8ieoMCZ0MkNuQaLfWONMWmbqwuDohfGQZk/FuzdT4aO/lJrUYiXbBSFv0ACzphEw==",
-      "path": "microsoft.entityframeworkcore.relational/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512"
+      "sha512": "sha512-apLzFyjM3s/voBiaMCJPwIOk5SxA1N6GmSbhqthfbUDn8mX+kxZl4RXNdaoBLzPKfUg4EoqCtt0YON/g9YXruQ==",
+      "path": "microsoft.entityframeworkcore.relational/7.0.12",
+      "hashPath": "microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.11": {
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CoOGcdXUItIRLELYtyNhb0b3eN0VKb8/zZbv6h4t1BiTlymbK1KwPul9QR3hde2pc5cu6vf67bCsNUM3Zhn8Yw==",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.11.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/7.0.11": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uYlAUW+vJvF7VRZrkCdWUNNU4y7+XMTlMrIl3yQ/XoF/hIACzRMUtT4HFIHBQKs10L07zxv++IRM+H+Vo/KT7A==",
-      "path": "microsoft.entityframeworkcore.sqlserver.nettopologysuite/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.nettopologysuite.7.0.11.nupkg.sha512"
+      "sha512": "sha512-jwh9C/RzCZPTYNL5YOvxUJDfzRtrpbWl5qLWYRBxeYTKDRRH9n2vWCV+s2URGfOKCufZEx1wrlFSEZ2TJPb4Gw==",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.12",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.12.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "type": "package",
@@ -3305,6 +3331,13 @@
       "path": "microsoft.identitymodel.tokens/6.24.0",
       "hashPath": "microsoft.identitymodel.tokens.6.24.0.nupkg.sha512"
     },
+    "Microsoft.jQuery.Unobtrusive.Validation/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RJ1eBcFIwHINVocYtOlmBQd21jGgHOHGe7TLzmQ9VMRMUqAlJoxyCw1AayBkdExqrEZt0Wz9uaZiDX75NHQmSw==",
+      "path": "microsoft.jquery.unobtrusive.validation/4.0.0",
+      "hashPath": "microsoft.jquery.unobtrusive.validation.4.0.0.nupkg.sha512"
+    },
     "Microsoft.NET.StringTools/17.3.2": {
       "type": "package",
       "serviceable": true,
@@ -3409,20 +3442,6 @@
       "sha512": "sha512-WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
-    },
-    "NetTopologySuite/2.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
-      "path": "nettopologysuite/2.5.0",
-      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
-    },
-    "NetTopologySuite.IO.SqlServerBytes/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-R4BcV19f2l6EjHSjh/EHwLhYQHrOov9vig1EW5oBm0iqlZOgaIJm5tBnlbFnYlvdYOPuf5p0Qtf8PCVwH77Wbg==",
-      "path": "nettopologysuite.io.sqlserverbytes/2.1.0",
-      "hashPath": "nettopologysuite.io.sqlserverbytes.2.1.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",

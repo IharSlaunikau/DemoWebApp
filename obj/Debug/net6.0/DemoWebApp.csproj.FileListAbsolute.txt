@@ -1,7 +1,0 @@
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.AssemblyInfoInputs.cache
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.AssemblyInfo.cs
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.csproj.CoreCompileInputs.cache
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.MvcApplicationPartsAssemblyInfo.cache
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.RazorAssemblyInfo.cache
-D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\obj\Debug\net6.0\DemoWebApp.RazorAssemblyInfo.cs

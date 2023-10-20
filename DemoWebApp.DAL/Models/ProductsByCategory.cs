@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public partial class ProductsByCategory
 {
-    public partial class ProductsByCategory
-    {
-        public string CategoryName { get; set; } = null!;
-        public string ProductName { get; set; } = null!;
-        public string? QuantityPerUnit { get; set; }
-        public short? UnitsInStock { get; set; }
-        public bool Discontinued { get; set; }
-    }
+    public string CategoryName { get; set; }
+
+    public string ProductName { get; set; }
+
+    public string QuantityPerUnit { get; set; }
+
+    public short? UnitsInStock { get; set; }
+
+    public bool Discontinued { get; set; }
 }

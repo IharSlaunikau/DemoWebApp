@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class QuarterlyOrder
 {
-    public partial class QuarterlyOrder
-    {
-        public string? CustomerId { get; set; }
-        public string? CompanyName { get; set; }
-        public string? City { get; set; }
-        public string? Country { get; set; }
-    }
+    public string CustomerId { get; set; }
+
+    public string CompanyName { get; set; }
+
+    public string City { get; set; }
+
+    public string Country { get; set; }
 }

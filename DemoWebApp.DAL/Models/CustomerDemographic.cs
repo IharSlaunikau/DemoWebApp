@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class CustomerDemographic
 {
-    public partial class CustomerDemographic
-    {
-        public CustomerDemographic()
-        {
-            Customers = new HashSet<Customer>();
-        }
 
-        public string CustomerTypeId { get; set; } = null!;
-        public string? CustomerDesc { get; set; }
+    public string CustomerTypeId { get; set; }
 
-        public virtual ICollection<Customer> Customers { get; set; }
-    }
+    public string CustomerDesc { get; set; }
+
+    public ICollection<Customer> Customers { get; } = new HashSet<Customer>();
 }

@@ -46,6 +46,231 @@
           }
         }
       },
+      "bootstrap/5.3.2": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.rtl.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.rtl.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.rtl.min.css": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/css/bootstrap.rtl.min.css.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.bundle.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.bundle.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.bundle.min.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.bundle.min.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.esm.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.esm.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.esm.min.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.esm.min.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.min.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          },
+          "contentFiles/any/any/wwwroot/js/bootstrap.min.js.map": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -638,6 +863,36 @@
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "jQuery/1.8.0": {
+        "type": "package"
+      },
+      "jQuery.Validation/1.8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.3.2"
+        }
+      },
+      "Mapster/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Mapster.Core": "1.2.1"
+        },
+        "compile": {
+          "lib/net6.0/Mapster.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mapster.dll": {}
+        }
+      },
+      "Mapster.Core/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Mapster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mapster.Core.dll": {}
         }
       },
       "MessagePack/2.1.152": {
@@ -1300,11 +1555,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.11": {
+      "Microsoft.EntityFrameworkCore/7.0.12": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.11",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -1323,7 +1578,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -1336,7 +1591,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -1345,10 +1600,10 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore": "7.0.12",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -1362,11 +1617,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.11": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.11"
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.12"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -1377,27 +1632,6 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/7.0.11": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "NetTopologySuite": "2.5.0",
-          "NetTopologySuite.IO.SqlServerBytes": "2.1.0"
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -1705,6 +1939,13 @@
           }
         }
       },
+      "Microsoft.jQuery.Unobtrusive.Validation/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0",
+          "jQuery.Validation": "1.8.0.1"
+        }
+      },
       "Microsoft.NET.StringTools/17.3.2": {
         "type": "package",
         "dependencies": {
@@ -1978,38 +2219,6 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
-        }
-      },
-      "NetTopologySuite/2.5.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "NetTopologySuite.IO.SqlServerBytes/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "NetTopologySuite": "[2.0.0, 3.0.0-A)"
-        },
-        "compile": {
-          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
-            "related": ".xml"
-          }
         }
       },
       "Newtonsoft.Json/13.0.1": {
@@ -3875,9 +4084,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "6.0.3"
         },
         "compile": {
           "bin/placeholder/DemoWebApp.DAL.dll": {}
@@ -3925,6 +4132,106 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "bootstrap/5.3.2": {
+      "sha512": "m0/GEaLwE35B8P1xScFhwAsQi5o6kWPzOVPdGkoFwv+5YjmbgXFPQai71N5APwRCU52ZO4vHYWJ5DYSqKKgivw==",
+      "type": "package",
+      "path": "bootstrap/5.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bootstrap.5.3.2.nupkg.sha512",
+        "bootstrap.nuspec",
+        "bootstrap.png",
+        "content/Content/bootstrap-grid.css",
+        "content/Content/bootstrap-grid.css.map",
+        "content/Content/bootstrap-grid.min.css",
+        "content/Content/bootstrap-grid.min.css.map",
+        "content/Content/bootstrap-grid.rtl.css",
+        "content/Content/bootstrap-grid.rtl.css.map",
+        "content/Content/bootstrap-grid.rtl.min.css",
+        "content/Content/bootstrap-grid.rtl.min.css.map",
+        "content/Content/bootstrap-reboot.css",
+        "content/Content/bootstrap-reboot.css.map",
+        "content/Content/bootstrap-reboot.min.css",
+        "content/Content/bootstrap-reboot.min.css.map",
+        "content/Content/bootstrap-reboot.rtl.css",
+        "content/Content/bootstrap-reboot.rtl.css.map",
+        "content/Content/bootstrap-reboot.rtl.min.css",
+        "content/Content/bootstrap-reboot.rtl.min.css.map",
+        "content/Content/bootstrap-utilities.css",
+        "content/Content/bootstrap-utilities.css.map",
+        "content/Content/bootstrap-utilities.min.css",
+        "content/Content/bootstrap-utilities.min.css.map",
+        "content/Content/bootstrap-utilities.rtl.css",
+        "content/Content/bootstrap-utilities.rtl.css.map",
+        "content/Content/bootstrap-utilities.rtl.min.css",
+        "content/Content/bootstrap-utilities.rtl.min.css.map",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Content/bootstrap.min.css.map",
+        "content/Content/bootstrap.rtl.css",
+        "content/Content/bootstrap.rtl.css.map",
+        "content/Content/bootstrap.rtl.min.css",
+        "content/Content/bootstrap.rtl.min.css.map",
+        "content/Scripts/bootstrap.bundle.js",
+        "content/Scripts/bootstrap.bundle.js.map",
+        "content/Scripts/bootstrap.bundle.min.js",
+        "content/Scripts/bootstrap.bundle.min.js.map",
+        "content/Scripts/bootstrap.esm.js",
+        "content/Scripts/bootstrap.esm.js.map",
+        "content/Scripts/bootstrap.esm.min.js",
+        "content/Scripts/bootstrap.esm.min.js.map",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.js.map",
+        "content/Scripts/bootstrap.min.js",
+        "content/Scripts/bootstrap.min.js.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-grid.rtl.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-reboot.rtl.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap-utilities.rtl.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap.min.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap.rtl.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap.rtl.css.map",
+        "contentFiles/any/any/wwwroot/css/bootstrap.rtl.min.css",
+        "contentFiles/any/any/wwwroot/css/bootstrap.rtl.min.css.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.bundle.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.bundle.js.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.bundle.min.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.bundle.min.js.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.esm.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.esm.js.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.esm.min.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.esm.min.js.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.js.map",
+        "contentFiles/any/any/wwwroot/js/bootstrap.min.js",
+        "contentFiles/any/any/wwwroot/js/bootstrap.min.js.map"
       ]
     },
     "Humanizer/2.14.1": {
@@ -4671,6 +4978,67 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "jQuery/1.8.0": {
+      "sha512": "laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "type": "package",
+      "path": "jquery/1.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.8.0-vsdoc.js",
+        "Content/Scripts/jquery-1.8.0.js",
+        "Content/Scripts/jquery-1.8.0.min.js",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.8.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.8.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jQuery.Validation/1.8.0.1": {
+      "sha512": "cSBTW8FiNcFYy7h8jY38ffnJGia25HQH/z1TP3f8OKZhn1ZSGS7Bebz9nMevKbtsAjzHhDFp/Cq0cT+ixwiB5A==",
+      "type": "package",
+      "path": "jquery.validation/1.8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.validate-vsdoc.js",
+        "Content/Scripts/jquery.validate.js",
+        "Content/Scripts/jquery.validate.min.js",
+        "jquery.validation.1.8.0.1.nupkg.sha512",
+        "jquery.validation.nuspec"
+      ]
+    },
+    "Mapster/7.4.0": {
+      "sha512": "RYGoDqvS4WTKIq0HDyPBBVIj6N0mluOCXQ1Vk95JKseMHEsbCXSEGKSlP95oL+s42IXAXbqvHj7p0YaRBUcfqg==",
+      "type": "package",
+      "path": "mapster/7.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.dll",
+        "lib/net7.0/Mapster.dll",
+        "mapster.7.4.0.nupkg.sha512",
+        "mapster.nuspec"
+      ]
+    },
+    "Mapster.Core/1.2.1": {
+      "sha512": "11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
+      "type": "package",
+      "path": "mapster.core/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.Core.dll",
+        "lib/net7.0/Mapster.Core.dll",
+        "mapster.core.1.2.1.nupkg.sha512",
+        "mapster.core.nuspec"
       ]
     },
     "MessagePack/2.1.152": {
@@ -5438,10 +5806,10 @@
         "microsoft.dotnet.scaffolding.shared.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.11": {
-      "sha512": "r7YGITjQ7v1hYtUXIavjSx+T1itKVPUFAIBN7HaKNjbR8x+gep8w9H3NEchglJOh1woZR4b2MhbSo2YFRZwZDg==",
+    "Microsoft.EntityFrameworkCore/7.0.12": {
+      "sha512": "HRge/bJ5SKMNeqybC4NnRwWZn69QBjVVoVmwhmJ8xgQ50Ye+jTOOf2mef/y4Lrq1HUeMg8cu+3JeFdnp+Y8skA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.11",
+      "path": "microsoft.entityframeworkcore/7.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5449,79 +5817,64 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.11": {
-      "sha512": "IoOnhycZ0/VtLowf0HgB0cujxwksokzkS3/5108AHOcbntHUTqwxtCjG4E4FCly/45G+mxb+4PxBdFZhA49lwQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
+      "sha512": "GDlY3DzUbpagqb0683NUM2RK9eJFjTfmlLJd5YtvzBf8T4dwanIOSjd2vN7dXJihyZ0JlYaCetyHgxzbrxiUOw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.11",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.11": {
-      "sha512": "Qexum5safSSfijx6P1QSq5bVJPPTM/uf7lQmpL/shkiozEC/0FzqNaVUfFpbNN8zsO1jMFYbeDMF4cxJMlTT9w==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
+      "sha512": "feFe61uKUNoHJfo9tnO65BTzcpWEYIr34xWikhYgZl5c9RiiUJLuCoTqoGc9fuuKy+xk9aUa1NwgDGMC4KmBig==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.11",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
-      "sha512": "yHEEyah1XARStV1SJOsdKj8ieoMCZ0MkNuQaLfWONMWmbqwuDohfGQZk/FuzdT4aO/lJrUYiXbBSFv0ACzphEw==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
+      "sha512": "apLzFyjM3s/voBiaMCJPwIOk5SxA1N6GmSbhqthfbUDn8mX+kxZl4RXNdaoBLzPKfUg4EoqCtt0YON/g9YXruQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.11",
+      "path": "microsoft.entityframeworkcore.relational/7.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.11": {
-      "sha512": "CoOGcdXUItIRLELYtyNhb0b3eN0VKb8/zZbv6h4t1BiTlymbK1KwPul9QR3hde2pc5cu6vf67bCsNUM3Zhn8Yw==",
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
+      "sha512": "jwh9C/RzCZPTYNL5YOvxUJDfzRtrpbWl5qLWYRBxeYTKDRRH9n2vWCV+s2URGfOKCufZEx1wrlFSEZ2TJPb4Gw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.11",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.7.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.7.0.12.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/7.0.11": {
-      "sha512": "uYlAUW+vJvF7VRZrkCdWUNNU4y7+XMTlMrIl3yQ/XoF/hIACzRMUtT4HFIHBQKs10L07zxv++IRM+H+Vo/KT7A==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver.nettopologysuite/7.0.11",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "build/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.targets",
-        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll",
-        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.xml",
-        "microsoft.entityframeworkcore.sqlserver.nettopologysuite.7.0.11.nupkg.sha512",
-        "microsoft.entityframeworkcore.sqlserver.nettopologysuite.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -5995,6 +6348,19 @@
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
         "microsoft.identitymodel.tokens.6.24.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Validation/4.0.0": {
+      "sha512": "RJ1eBcFIwHINVocYtOlmBQd21jGgHOHGe7TLzmQ9VMRMUqAlJoxyCw1AayBkdExqrEZt0Wz9uaZiDX75NHQmSw==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.validation/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.validate.unobtrusive.js",
+        "Content/Scripts/jquery.validate.unobtrusive.min.js",
+        "microsoft.jquery.unobtrusive.validation.4.0.0.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.validation.nuspec"
       ]
     },
     "Microsoft.NET.StringTools/17.3.2": {
@@ -6730,34 +7096,6 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
         "netstandard.library.nuspec"
-      ]
-    },
-    "NetTopologySuite/2.5.0": {
-      "sha512": "5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
-      "type": "package",
-      "path": "nettopologysuite/2.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/NetTopologySuite.dll",
-        "lib/netstandard2.0/NetTopologySuite.xml",
-        "nettopologysuite.2.5.0.nupkg.sha512",
-        "nettopologysuite.nuspec"
-      ]
-    },
-    "NetTopologySuite.IO.SqlServerBytes/2.1.0": {
-      "sha512": "R4BcV19f2l6EjHSjh/EHwLhYQHrOov9vig1EW5oBm0iqlZOgaIJm5tBnlbFnYlvdYOPuf5p0Qtf8PCVwH77Wbg==",
-      "type": "package",
-      "path": "nettopologysuite.io.sqlserverbytes/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll",
-        "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.xml",
-        "nettopologysuite.io.sqlserverbytes.2.1.0.nupkg.sha512",
-        "nettopologysuite.io.sqlserverbytes.nuspec"
       ]
     },
     "Newtonsoft.Json/13.0.1": {
@@ -11035,8 +11373,11 @@
     "net6.0": [
       "DemoWebApp.BLL >= 1.0.0",
       "DemoWebApp.DAL >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Mapster >= 7.4.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.12",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "Microsoft.jQuery.Unobtrusive.Validation >= 4.0.0",
+      "bootstrap >= 5.3.2"
     ]
   },
   "packageFolders": {
@@ -11097,13 +11438,25 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Mapster": {
+            "target": "Package",
+            "version": "[7.4.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[7.0.11, )"
+            "version": "[7.0.12, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.16, )"
+          },
+          "Microsoft.jQuery.Unobtrusive.Validation": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "bootstrap": {
+            "target": "Package",
+            "version": "[5.3.2, )"
           }
         },
         "imports": [

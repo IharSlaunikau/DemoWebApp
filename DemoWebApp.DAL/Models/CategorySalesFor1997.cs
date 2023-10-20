@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class CategorySalesFor1997
 {
-    public partial class CategorySalesFor1997
-    {
-        public string CategoryName { get; set; } = null!;
-        public decimal? CategorySales { get; set; }
-    }
+    public string CategoryName { get; set; }
+
+    public decimal? CategorySales { get; set; }
 }

@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class Category
 {
-    public partial class Category
+    private byte[] _picture;
+
+    public int CategoryId { get; set; }
+
+    public string CategoryName { get; set; }
+
+    public string Description { get; set; }
+
+    public IReadOnlyList<byte> Picture
     {
-        public Category()
-        {
-            Products = new HashSet<Product>();
-        }
-
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; } = null!;
-        public string? Description { get; set; }
-        public byte[]? Picture { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
+        get => _picture;
+        set => _picture = value?.ToArray();
     }
+
+    public ICollection<Product> Products { get; } = new HashSet<Product>();
 }

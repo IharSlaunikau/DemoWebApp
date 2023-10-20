@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+namespace DemoWebApp.DAL.Models;
 
-namespace NewDemoApp.Models
+public class SummaryOfSalesByYear
 {
-    public partial class SummaryOfSalesByYear
-    {
-        public DateTime? ShippedDate { get; set; }
-        public int OrderId { get; set; }
-        public decimal? Subtotal { get; set; }
-    }
+    public DateTime? ShippedDate { get; set; }
+
+    public int OrderId { get; set; }
+
+    public decimal? Subtotal { get; set; }
 }
