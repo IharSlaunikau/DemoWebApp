@@ -1,13 +1,12 @@
+using System.Globalization;
 using DemoWebApp.DAL;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Repositories;
-using DemoWebApp.WebSite.Settings;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
+using DemoWebApp.WebSite.Middleware;
 using DemoWebApp.WebSite.Models;
-using Microsoft.AspNetCore.Diagnostics;
-using Serilog;
+using DemoWebApp.WebSite.Settings;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebApp.WebSite;
 
@@ -48,24 +47,7 @@ public class Startup
         }
         else
         {
-            app.UseExceptionHandler(errorApp =>
-            {
-                errorApp.Run(async context =>
-                {
-                    context.Response.ContentType = "text/html";
-
-                    var errorFeature = context.Features.Get<IExceptionHandlerFeature>();
-                    var exception = errorFeature.Error;
-
-                    Log.Error(exception, "An unhandled exception has occurred");
-
-                    await context.Response.WriteAsync("<html><body>\r\n");
-                    await context.Response.WriteAsync("An error occurred while processing your request: <br><br>\r\n");
-                    await context.Response.WriteAsync($"{exception.Message}<br><br>\r\n");
-                    await context.Response.WriteAsync("See logs for more details.<br><br>\r\n");
-                    await context.Response.WriteAsync("</body></html>\r\n");
-                });
-            });
+            app.UseMiddleware<ErrorHandlerMiddleware>();
         }
 
         app.UseStaticFiles();

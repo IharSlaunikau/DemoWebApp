@@ -1,4 +1,4 @@
-﻿using DemoWebApp.DAL.Models;
+using DemoWebApp.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebApp.DAL;

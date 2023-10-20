@@ -1,3 +1,5 @@
+using DemoWebApp.WebSite.Settings;
+using Microsoft.Extensions.Options;
 using Serilog;
 
 namespace DemoWebApp.WebSite;
@@ -6,31 +8,34 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-#pragma warning disable CA1305 // Specify IFormatProvider
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
+            .ReadFrom.Configuration(configuration)
             .Enrich.FromLogContext()
-            .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
             .CreateLogger();
-#pragma warning restore CA1305 // Specify IFormatProvider
 
         try
         {
-            Log.Information("Starting application from {Location}", AppContext.BaseDirectory);
-
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
-
-            Log.Information("Configuration values: {@AppSettings}", configuration.AsEnumerable());
+            var appLocation = AppContext.BaseDirectory;
+            Log.Information("Starting application at {AppLocation}...", appLocation);
 
             var host = CreateHostBuilder(args).Build();
+
+            var appConfiguration = host.Services.GetRequiredService<IOptions<AppSettings>>()?.Value;
+            if (appConfiguration != null)
+            {
+                Log.Information("Current configuration: NorthwindConnection = {NorthwindConnection}", appConfiguration.NorthwindConnection);
+            }
+
             host.Run();
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Application start-up failed");
+            Log.Fatal(ex, "Application startup failed");
         }
         finally
         {
@@ -43,6 +48,5 @@ public static class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-            })
-            .UseSerilog();
+            });
 }
