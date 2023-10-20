@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 using DemoWebApp.WebSite.Models;
+using Microsoft.AspNetCore.Diagnostics;
+using Serilog;
 
 namespace DemoWebApp.WebSite;
 
@@ -46,8 +48,26 @@ public class Startup
         }
         else
         {
-            app.UseExceptionHandler("/Home/Error");
+            app.UseExceptionHandler(errorApp =>
+            {
+                errorApp.Run(async context =>
+                {
+                    context.Response.ContentType = "text/html";
+
+                    var errorFeature = context.Features.Get<IExceptionHandlerFeature>();
+                    var exception = errorFeature.Error;
+
+                    Log.Error(exception, "An unhandled exception has occurred");
+
+                    await context.Response.WriteAsync("<html><body>\r\n");
+                    await context.Response.WriteAsync("An error occurred while processing your request: <br><br>\r\n");
+                    await context.Response.WriteAsync($"{exception.Message}<br><br>\r\n");
+                    await context.Response.WriteAsync("See logs for more details.<br><br>\r\n");
+                    await context.Response.WriteAsync("</body></html>\r\n");
+                });
+            });
         }
+
         app.UseStaticFiles();
 
         var localizationOptions = Configuration.GetSection("Localization");
