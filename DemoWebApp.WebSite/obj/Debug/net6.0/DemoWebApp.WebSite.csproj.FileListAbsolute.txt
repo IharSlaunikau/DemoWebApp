@@ -280,3 +280,6 @@ D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\Dem
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\System.Text.Json.dll
 D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Serilog.Extensions.Logging.File.dll
+D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Serilog.Sinks.Async.dll
+D:\Mentoring\.NET WEB Mentoring Program\web-net-mentoring-program\DemoWebApp\DemoWebApp.WebSite\bin\Debug\net6.0\Serilog.Sinks.RollingFile.dll

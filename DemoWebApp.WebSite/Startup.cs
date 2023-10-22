@@ -1,11 +1,12 @@
+using System.Globalization;
 using DemoWebApp.DAL;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Repositories;
-using DemoWebApp.WebSite.Settings;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
+using DemoWebApp.WebSite.Middleware;
 using DemoWebApp.WebSite.Models;
+using DemoWebApp.WebSite.Settings;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebApp.WebSite;
 
@@ -20,11 +21,16 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        var connectionString = Configuration.GetConnectionString("NorthwindDatabase");
+        Console.WriteLine($"ConnectionString: {connectionString}"); // Добавить эту строку, чтобы вывести строку подключения
+
         services.AddDbContext<NorthwindDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
+            options.UseSqlServer(connectionString));
 
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
+
+        services.AddScoped<CustomExceptionHandler>();
 
         MappingConfig.Configure();
 
@@ -46,13 +52,32 @@ public class Startup
         }
         else
         {
-            app.UseExceptionHandler("/Home/Error");
+            app.UseExceptionHandler(errorApp =>
+            {
+                errorApp.Run(async context =>
+                {
+                    var errorHandler = errorApp.ApplicationServices.GetRequiredService<CustomExceptionHandler>();
+                    await errorHandler.Handle(context);
+                });
+            });
         }
+
         app.UseStaticFiles();
 
         var localizationOptions = Configuration.GetSection("Localization");
+
         var defaultCulture = localizationOptions.GetValue<string>("DefaultCulture");
-        var supportedCultures = localizationOptions.GetSection("SupportedCultures").Get<string[]>()
+
+        if (String.IsNullOrWhiteSpace(defaultCulture))
+        {
+            defaultCulture = "en-US";
+        }
+
+        var supportedCulturesArray = localizationOptions.GetSection("SupportedCultures").Get<string[]>() ?? new[] { defaultCulture };
+
+        var validCultures = supportedCulturesArray.Where(c => !String.IsNullOrWhiteSpace(c));
+
+        var supportedCultures = validCultures
             .Select(c => new CultureInfo(c)).ToArray();
 
         app.UseRequestLocalization(new RequestLocalizationOptions

@@ -12,5 +12,11 @@ public static class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
+                webBuilder.ConfigureLogging((hostingContext, logging) =>
+                {
+                    var logPath = Path.Combine(hostingContext.Configuration.GetValue<string>("Logging:File:Path"),
+                        hostingContext.Configuration.GetValue<string>("Logging:File:Name"));
+                    logging.AddFile(logPath);
+                });
             });
 }
