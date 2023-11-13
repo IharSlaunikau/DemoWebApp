@@ -45,5 +45,8 @@ public static class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
+            }).ConfigureServices((context, services) =>
+            {
+                services.AddSingleton(context.Configuration);
             });
 }
