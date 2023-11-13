@@ -25,6 +25,7 @@ public class CategoryController : Controller
         _cloudinary = cloudinary;
     }
 
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var categories = await _categoryRepository.GetAllAsync();
@@ -49,7 +50,8 @@ public class CategoryController : Controller
         return File(fixedImageData, ContentType);
     }
 
-    public async Task<IActionResult> EditImage(int id)
+    [HttpGet("{id}/editimage")]
+    public async Task<IActionResult> EditImageGet([FromRoute] int id)
     {
         var category = await _categoryRepository.GetByIdAsync(id);
 
@@ -58,20 +60,22 @@ public class CategoryController : Controller
             return NotFound();
         }
 
-        var model = new EditCategoryImageViewModel
+        var editCategoryImageViewModel = new EditCategoryImageViewModel()
         {
             Id = category.Id,
             CategoryName = category.CategoryName,
-            Picture = category.Picture
+            PictureUrl = category.PictureUrl
         };
 
-        return View(model);
+        return View(ViewNames.EditImage, editCategoryImageViewModel);
     }
 
     [HttpPost("{id}/editimage")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> EditImagePost([FromRoute] int id, EditCategoryImageViewModel editCategoryImageViewModel)
     {
+        ArgumentNullException.ThrowIfNull(editCategoryImageViewModel);
+
         if (editCategoryImageViewModel.NewImage == null || editCategoryImageViewModel.NewImage.Length == 0)
         {
             ModelState.AddModelError("NewImage", "Please select an image to upload.");
@@ -93,14 +97,16 @@ public class CategoryController : Controller
 
         var uploadParams = new ImageUploadParams()
         {
-            File = new FileDescription(editCategoryImageViewModel.NewImage.FileName, editCategoryImageViewModel.NewImage.OpenReadStream())
+            File = new FileDescription(editCategoryImageViewModel.NewImage.FileName,
+                editCategoryImageViewModel.NewImage.OpenReadStream())
         };
+
         var result = await _cloudinary.UploadAsync(uploadParams);
 
         categoryToUpdate.PictureUrl = result.SecureUrl.AbsoluteUri;
 
         await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, new Category());
 
-        return RedirectToAction("Index");
+        return RedirectToAction(ViewNames.Index);
     }
 }

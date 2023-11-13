@@ -14,7 +14,7 @@ public class EditCategoryImageViewModel
     public string CategoryName { get; set; }
 
     [Display(Name = "Picture")]
-    public string PictureUrl { get; set; } // Поле для хранения URL-ссылки на изображение
+    public string PictureUrl { get; set; }
 
     [DataType(DataType.Upload)]
     [Display(Name = "New Image")]

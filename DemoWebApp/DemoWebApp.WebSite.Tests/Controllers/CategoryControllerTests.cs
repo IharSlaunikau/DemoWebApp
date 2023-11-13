@@ -4,6 +4,7 @@ using DemoWebApp.WebSite.Controllers;
 using DemoWebApp.WebSite.Models.Views;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using CloudinaryDotNet;
 
 namespace DemoWebApp.WebSite.Tests.Controllers;
 
@@ -11,12 +12,24 @@ public class CategoryControllerTests
 {
     private Mock<ICategoryRepository> _categoryRepositoryMock;
     private CategoryController _controller;
+    private Cloudinary _cloudinary;
 
     [SetUp]
     public void SetUp()
     {
         _categoryRepositoryMock = new Mock<ICategoryRepository>();
-        _controller = new CategoryController(_categoryRepositoryMock.Object);
+
+        var config = new Dictionary<string, string>();
+        var cloudinaryConfiguration = new CloudinaryDotNet.Account
+        {
+            ApiKey = "test",
+            ApiSecret = "test",
+            Cloud = "test"
+        };
+
+        _cloudinary = new Cloudinary(cloudinaryConfiguration);
+
+        _controller = new CategoryController(_categoryRepositoryMock.Object, _cloudinary);
     }
 
     [Test]

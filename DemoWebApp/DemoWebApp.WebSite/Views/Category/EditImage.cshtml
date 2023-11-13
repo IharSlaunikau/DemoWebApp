@@ -1,27 +1,44 @@
 @model DemoWebApp.WebSite.Models.Views.EditCategoryImageViewModel
+
 @{
-    ViewData["Title"] = "Edit Image";
+    ViewData["Title"] = "Edit Category Image";
 }
 
-<div class="container">
-    <h2 class="mb-4">Edit Image</h2>
+<h1>Edit Category Image</h1>
 
-    <form action="@Url.Action("EditImagePost", "Category", new { id = Model.Id })" method="post" enctype="multipart/form-data">
-        <input type="hidden" asp-for="Id" />
-        <div class="form-group">
-            <label asp-for="CategoryName">Category Name</label>
-            <input asp-for="CategoryName" class="form-control" readonly="readonly" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Picture">Current image</label>
-            <img src="@Url.Action("GetImage", "Category", new { id = Model.Id })" alt="Category image" style="max-width: 100px; max-height: 100px;" />
-        </div>
-        <div class="form-group">
-            <label asp-for="NewImage">New image</label>
-            <input asp-for="NewImage" class="form-control" />
-            <span asp-validation-for="NewImage" class="text-danger"></span>
-        </div>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Category" asp-action="EditImagePost" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <button type="submit" class="btn btn-primary">Update image</button>
-    </form>
+            <div class="form-group">
+                <label asp-for="CategoryName"></label>
+                <input asp-for="CategoryName" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>Current Image</label>
+                <img src="@Model.PictureUrl" alt="@Model.CategoryName" class="img-thumbnail">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NewImage" class="control-label"></label>
+                <input asp-for="NewImage" type="file" class="form-control">
+                <span asp-validation-for="NewImage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update Image" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

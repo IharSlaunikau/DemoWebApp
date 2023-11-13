@@ -33,6 +33,7 @@ public class ProductController : Controller
         _productSettings = productSettings.Value;
     }
 
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var amount = _productSettings.MaxAmount;
@@ -46,6 +47,8 @@ public class ProductController : Controller
         return View(ViewNames.Index, productViewModels);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create()
     {
         ViewBag.Categories = await GetCategoriesViewModel();
@@ -54,6 +57,7 @@ public class ProductController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(ProductViewModel productViewModel)
     {
         if (!ModelState.IsValid)
@@ -70,6 +74,8 @@ public class ProductController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id)
     {
         var product = await _productRepository.GetByIdAsync(id);
@@ -87,6 +93,7 @@ public class ProductController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, ProductViewModel productViewModel)
     {
         if (!ModelState.IsValid)
