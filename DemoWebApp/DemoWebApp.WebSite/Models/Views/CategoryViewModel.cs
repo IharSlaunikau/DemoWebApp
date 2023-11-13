@@ -15,5 +15,7 @@ public class CategoryViewModel
     public byte[] Picture { get; set; }
 #pragma warning restore CA1819 // Properties should not return arrays
 
+    public string PictureUrl { get; set; }
+
     public ICollection<ProductViewModel> Products { get; } = new HashSet<ProductViewModel>();
 }

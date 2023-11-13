@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using CloudinaryDotNet;
 using DemoWebApp.DAL;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
@@ -34,6 +35,13 @@ public class Startup
 
         services.AddDbContext<NorthwindDbContext>(options => options.UseSqlServer(connectionString));
 
+        services.AddSingleton(provider =>
+        {
+            var cloudinarySettings = provider.GetRequiredService<IOptions<CloudinarySettings>>().Value;
+            var myAccount = new Account(cloudinarySettings.CloudName, cloudinarySettings.ApiKey, cloudinarySettings.ApiSecret);
+            return new Cloudinary(myAccount);
+        });
+
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IPropertyUpdater<Category>, PropertyUpdater<Category>>();
@@ -67,6 +75,7 @@ public class Startup
         });
 
         services.Configure<ProductSettings>(Configuration.GetSection("ProductSettings"));
+        services.Configure<CloudinarySettings>(Configuration.GetSection("Cloudinary"));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -15,6 +15,8 @@ public class Category : BaseEntity, ICloneable
     public byte[] Picture { get; set; }
 #pragma warning restore CA1819 // Properties should not return arrays
 
+    public string PictureUrl { get; set; }
+
     public ICollection<Product> Products { get; } = new HashSet<Product>();
 
     public object Clone()

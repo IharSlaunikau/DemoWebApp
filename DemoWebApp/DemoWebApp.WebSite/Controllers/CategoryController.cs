@@ -1,3 +1,5 @@
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
 using DemoWebApp.WebSite.Models.Views;
@@ -12,12 +14,15 @@ public class CategoryController : Controller
     const string ContentType = "image/bmp";
 
     private readonly ICategoryRepository _categoryRepository;
+    private readonly Cloudinary _cloudinary;
 
-    public CategoryController(ICategoryRepository categoryRepository)
+    public CategoryController(ICategoryRepository categoryRepository, Cloudinary cloudinary)
     {
         ArgumentNullException.ThrowIfNull(categoryRepository);
+        ArgumentNullException.ThrowIfNull(cloudinary);
 
         _categoryRepository = categoryRepository;
+        _cloudinary = cloudinary;
     }
 
     public async Task<IActionResult> Index()
@@ -74,9 +79,9 @@ public class CategoryController : Controller
             var category = await _categoryRepository.GetByIdAsync(id);
 
             editCategoryImageViewModel.CategoryName = category.CategoryName;
-            editCategoryImageViewModel.Picture = category.Picture;
+            editCategoryImageViewModel.PictureUrl = category.PictureUrl;
 
-            return View("EditImage", editCategoryImageViewModel);
+            return View(ViewNames.EditImage, editCategoryImageViewModel);
         }
 
         var categoryToUpdate = await _categoryRepository.GetByIdAsync(id);
@@ -86,15 +91,15 @@ public class CategoryController : Controller
             return NotFound();
         }
 
-        using (var memoryStream = new MemoryStream())
+        var uploadParams = new ImageUploadParams()
         {
-            await editCategoryImageViewModel.NewImage.CopyToAsync(memoryStream);
+            File = new FileDescription(editCategoryImageViewModel.NewImage.FileName, editCategoryImageViewModel.NewImage.OpenReadStream())
+        };
+        var result = await _cloudinary.UploadAsync(uploadParams);
 
-            var previousCategory = categoryToUpdate.Clone();
-            categoryToUpdate.Picture = memoryStream.ToArray();
+        categoryToUpdate.PictureUrl = result.SecureUrl.AbsoluteUri;
 
-            await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, (Category)previousCategory);
-        }
+        await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, new Category());
 
         return RedirectToAction("Index");
     }
