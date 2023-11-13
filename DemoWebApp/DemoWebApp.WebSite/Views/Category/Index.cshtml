@@ -1,0 +1,20 @@
+@using DemoWebApp.WebSite.Models.Views;
+@model IEnumerable<CategoryViewModel>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="container">
+    <h2 class="mb-4">Categories</h2>
+    <div class="list-group">
+        @foreach (var cat in Model)
+        {
+            <div class="list-group-item d-flex flex-row align-items-center">
+                <a href="@Url.Action("EditImage", "Category", new { id = cat.Id })">
+                    <img src="@Url.Action("GetImage", "Category", new { id = cat.Id })" alt="Category image" style="max-width: 100px; max-height: 100px;" />
+                </a>
+                <a href="#" class="list-group-item list-group-item-action ml-4">@cat.CategoryName</a>
+            </div>
+        }
+    </div>
+</div>
