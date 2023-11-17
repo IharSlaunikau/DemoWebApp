@@ -1,8 +1,8 @@
 using System.Globalization;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
-using DemoWebApp.WebSite.Models.Views;
 using DemoWebApp.WebSite.Settings;
+using DemoWebApp.WebSite.ViewModels;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -47,8 +47,7 @@ public class ProductController : Controller
         return View(ViewNames.Index, productViewModels);
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
+    [HttpGet]
     public async Task<IActionResult> Create()
     {
         ViewBag.Categories = await GetCategoriesViewModel();
@@ -74,8 +73,7 @@ public class ProductController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
+    [HttpGet("{id}/edit")]
     public async Task<IActionResult> Edit(int id)
     {
         var product = await _productRepository.GetByIdAsync(id);
@@ -92,7 +90,7 @@ public class ProductController : Controller
         return View(ViewNames.Edit, productViewModel);
     }
 
-    [HttpPost]
+    [HttpPost("{id}/edit")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, ProductViewModel productViewModel)
     {

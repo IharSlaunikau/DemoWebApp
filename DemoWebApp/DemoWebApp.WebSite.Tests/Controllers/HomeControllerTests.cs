@@ -1,5 +1,5 @@
 using DemoWebApp.WebSite.Controllers;
-using DemoWebApp.WebSite.Models.Views;
+using DemoWebApp.WebSite.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

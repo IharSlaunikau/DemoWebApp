@@ -8,18 +8,14 @@ public class NorthwindDbContextFactory : IDesignTimeDbContextFactory<NorthwindDb
 {
     public NorthwindDbContext CreateDbContext(string[] args)
     {
-        string currentDirectory = Directory.GetCurrentDirectory();
-        string solutionDirectory = Directory.GetParent(currentDirectory).FullName;
-        string webProjectDirectory = Path.Combine(solutionDirectory, "DemoWebApp.WebSite");
+        var currentDirectory = Directory.GetCurrentDirectory();
+        var solutionDirectory = Directory.GetParent(currentDirectory)!.FullName;
+        var webProjectDirectory = Path.Combine(solutionDirectory, "DemoWebApp.WebSite");
 
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath(webProjectDirectory)
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .Build();
-
-        Console.WriteLine("Current Directory: " + currentDirectory);
-        Console.WriteLine("Solution Directory: " + solutionDirectory);
-        Console.WriteLine("Web Project Directory: " + webProjectDirectory);
 
         var connectionString = configuration.GetSection("NorthwindSettings")["ConnectionString"];
 

@@ -1,8 +1,8 @@
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
 using DemoWebApp.WebSite.Controllers;
-using DemoWebApp.WebSite.Models.Views;
 using DemoWebApp.WebSite.Settings;
+using DemoWebApp.WebSite.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;

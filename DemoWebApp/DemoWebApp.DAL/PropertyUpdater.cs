@@ -17,7 +17,7 @@ public class PropertyUpdater<TEntity> : IPropertyUpdater<TEntity> where TEntity 
 
         foreach (PropertyInfo property in properties)
         {
-            if (dbContext.Model.FindEntityType(typeof(TEntity)).FindNavigation(property.Name) != null)
+            if (dbContext.Model.FindEntityType(typeof(TEntity))!.FindNavigation(property.Name) != null)
             {
                 continue;
             }
@@ -25,7 +25,7 @@ public class PropertyUpdater<TEntity> : IPropertyUpdater<TEntity> where TEntity 
             var updatedValue = property.GetValue(updatedEntity);
             var previousValue = property.GetValue(previousEntity);
 
-            if (updatedValue != null && !updatedValue.Equals(previousValue))
+            if (!EqualityComparer<object>.Default.Equals(updatedValue, previousValue))
             {
                 property.SetValue(previousEntity, updatedValue);
                 dbContext.Entry(previousEntity).Property(property.Name).IsModified = true;

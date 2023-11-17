@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using DemoWebApp.WebSite.Models.Views;
+using DemoWebApp.WebSite.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoWebApp.WebSite.Controllers;

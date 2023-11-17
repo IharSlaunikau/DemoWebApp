@@ -8,6 +8,7 @@ using DemoWebApp.DAL.Repositories;
 using DemoWebApp.WebSite.Middleware;
 using DemoWebApp.WebSite.Models;
 using DemoWebApp.WebSite.Settings;
+using DemoWebApp.WebSite.ViewModels.Mapping;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

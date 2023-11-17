@@ -2,9 +2,10 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
-using DemoWebApp.WebSite.Models.Views;
+using DemoWebApp.WebSite.ViewModels;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebApp.WebSite.Controllers;
 
@@ -12,6 +13,12 @@ public class CategoryController : Controller
 {
     const int BytesToSkip = 78;
     const string ContentType = "image/bmp";
+
+    private const int ImageWidth = 400;
+    private const int ImageHeight = 400;
+    private const string CropMode = "fill";
+    private const string Gravity = "face";
+    private const string ImageFolder = "demo_web_app/categories";
 
     private readonly ICategoryRepository _categoryRepository;
     private readonly Cloudinary _cloudinary;
@@ -26,11 +33,18 @@ public class CategoryController : Controller
     }
 
     [HttpGet]
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var categories = await _categoryRepository.GetAllAsync();
 
-        var categoryViewModels = categories.Adapt<IEnumerable<CategoryViewModel>>();
+        var categoryViewModels = categories.Select(category => new CategoryViewModel
+        {
+            Id = category.Id,
+            CategoryName = category.CategoryName,
+            PictureUrl = category.PictureUrl,
+            Picture = category.Picture
+        });
 
         return View(ViewNames.Index, categoryViewModels);
     }
@@ -40,14 +54,23 @@ public class CategoryController : Controller
     {
         var category = await _categoryRepository.GetByIdAsync(id);
 
-        if (category?.Picture == null)
+        if (category == null)
         {
             return NotFound();
         }
 
-        var fixedImageData = category.Picture.Skip(BytesToSkip).ToArray();
+        if (category.Picture != null)
+        {
+            var fixedImageData = category.Picture.Skip(BytesToSkip).ToArray();
+            return File(fixedImageData, ContentType);
+        }
 
-        return File(fixedImageData, ContentType);
+        if (category.PictureUrl != null)
+        {
+            return Redirect(category.PictureUrl.AbsoluteUri);
+        }
+
+        return NotFound();
     }
 
     [HttpGet("{id}/editimage")]
@@ -60,32 +83,42 @@ public class CategoryController : Controller
             return NotFound();
         }
 
-        var editCategoryImageViewModel = new EditCategoryImageViewModel()
-        {
-            Id = category.Id,
-            CategoryName = category.CategoryName,
-            PictureUrl = category.PictureUrl
-        };
+        var editCategoryImageViewModel = category.Adapt<CategoryViewModel>();
+
+        editCategoryImageViewModel.PictureUrl = category.Picture != null
+            ? new Uri($"{Request.Scheme}://{Request.Host}{Url.Action(nameof(GetImage), new { id = category.Id })}")
+            : category.PictureUrl;
 
         return View(ViewNames.EditImage, editCategoryImageViewModel);
     }
 
-    [HttpPost("{id}/editimage")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> EditImagePost([FromRoute] int id, EditCategoryImageViewModel editCategoryImageViewModel)
+    [HttpGet("{id}/EditImage")]
+    public async Task<IActionResult> EditImagePost([FromRoute] int id, [FromForm] CategoryViewModel model)
     {
-        ArgumentNullException.ThrowIfNull(editCategoryImageViewModel);
-
-        if (editCategoryImageViewModel.NewImage == null || editCategoryImageViewModel.NewImage.Length == 0)
+        if (!ModelState.IsValid)
         {
-            ModelState.AddModelError("NewImage", "Please select an image to upload.");
+            return View(ViewNames.EditImage, model);
+        }
 
-            var category = await _categoryRepository.GetByIdAsync(id);
+        if (model.NewImage != null)
+        {
+            await using var imageStream = model.NewImage.OpenReadStream();
 
-            editCategoryImageViewModel.CategoryName = category.CategoryName;
-            editCategoryImageViewModel.PictureUrl = category.PictureUrl;
+            var uploadResult = await _cloudinary.UploadAsync(new ImageUploadParams
+            {
+                File = new FileDescription(model.NewImage.FileName, imageStream),
+                Transformation = new Transformation().Width(ImageWidth).Height(ImageHeight).Crop(CropMode).Gravity(Gravity),
+                Folder = ImageFolder
+            });
 
-            return View(ViewNames.EditImage, editCategoryImageViewModel);
+            if (uploadResult.Error != null)
+            {
+                ModelState.AddModelError(string.Empty, $"Failed to upload image: {uploadResult.Error.Message}");
+
+                return View(ViewNames.EditImage, model);
+            }
+
+            model.PictureUrl = uploadResult.Url;
         }
 
         var categoryToUpdate = await _categoryRepository.GetByIdAsync(id);
@@ -95,18 +128,17 @@ public class CategoryController : Controller
             return NotFound();
         }
 
-        var uploadParams = new ImageUploadParams()
+        var previousCategory = categoryToUpdate.Clone();
+
+        model.Adapt(categoryToUpdate);
+
+        if (model.NewImage != null)
         {
-            File = new FileDescription(editCategoryImageViewModel.NewImage.FileName,
-                editCategoryImageViewModel.NewImage.OpenReadStream())
-        };
+            categoryToUpdate.Picture = null;
+        }
 
-        var result = await _cloudinary.UploadAsync(uploadParams);
+        await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, (Category)previousCategory);
 
-        categoryToUpdate.PictureUrl = result.SecureUrl.AbsoluteUri;
-
-        await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, new Category());
-
-        return RedirectToAction(ViewNames.Index);
+        return RedirectToAction(nameof(Index), categoryToUpdate);
     }
 }

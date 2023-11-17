@@ -1,4 +1,4 @@
-@using DemoWebApp.WebSite.Models.Views;
+@using DemoWebApp.WebSite.ViewModels;
 @model IEnumerable<CategoryViewModel>
 @{
     ViewData["Title"] = "Categories";
@@ -9,11 +9,16 @@
     <div class="list-group">
         @foreach (var cat in Model)
         {
+            var hasImage = cat.Picture != null || cat.PictureUrl != null;
+            var imageUrl = hasImage
+            ? Url.Action("GetImage", "Category", new { id = cat.Id })
+            : "/images/no-image-available.png";
+
             <div class="list-group-item d-flex flex-row align-items-center">
-                <a href="@Url.Action("EditImage", "Category", new { id = cat.Id })">
-                    <img src="@Url.Action("GetImage", "Category", new { id = cat.Id })" alt="Category image" style="max-width: 100px; max-height: 100px;" />
+                <a href="@Url.Action("EditImageGet", "Category", new { id = cat.Id })">
+                    <img src="@imageUrl" alt="Category image" style="max-width: 100px; max-height: 100px;" />
                 </a>
-                <a href="#" class="list-group-item list-group-item-action ml-4">@cat.CategoryName</a>
+                <a href="@Url.Action("EditImageGet", "Category", new { id = cat.Id })" class="list-group-item list-group-item-action ml-4">@cat.CategoryName</a>
             </div>
         }
     </div>
