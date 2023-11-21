@@ -25,6 +25,8 @@ public class Startup
         CloudinaryConfig.Configure(services, Configuration);
 
         services.Configure<LogSettings>(Configuration.GetSection(nameof(LogSettings)));
+        services.Configure<ProductSettings>(Configuration.GetSection(nameof(ProductSettings)));
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
