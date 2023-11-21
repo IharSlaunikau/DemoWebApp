@@ -1,4 +1,3 @@
-using DemoWebApp.DAL;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
 using DemoWebApp.DAL.Repositories;
@@ -6,123 +5,121 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
 
-namespace DemoWebApp.DAL.Tests.Repositories
+namespace DemoWebApp.DAL.Tests.Repositories;
+
+[TestFixture(typeof(Category))]
+[TestFixture(typeof(Product))]
+public class BaseRepositoryTests<TEntity> where TEntity : BaseEntity, new()
 {
-    [TestFixture(typeof(Category))]
-    [TestFixture(typeof(Product))]
-    public class BaseRepositoryTests<TEntity> where TEntity : BaseEntity, new()
+    private DbSet<TEntity> _mockSet;
+    private TestRepository<TEntity> _repository;
+
+    private Mock<NorthwindDbContext> _mockDbContext;
+    private Mock<IPropertyUpdater<TEntity>> _mockUpdater;
+
+    [SetUp]
+    public void Setup()
     {
-        private DbSet<TEntity> _mockSet;
-        private TestRepository<TEntity> _repository;
+        var sampleData = TestHelper.CreateCollectionEntity<TEntity>().AsQueryable();
 
-        private Mock<NorthwindDbContext> _mockDbContext;
-        private Mock<IPropertyUpdater<TEntity>> _mockUpdater;
+        _mockSet = TestHelper.CreateDbSetMock(sampleData);
 
-        [SetUp]
-        public void Setup()
-        {
-            var sampleData = TestHelper.CreateCollectionEntity<TEntity>().AsQueryable();
+        var dbContextOptions = new DbContextOptions<NorthwindDbContext>();
+        _mockDbContext = new Mock<NorthwindDbContext>(dbContextOptions);
 
-            _mockSet = TestHelper.CreateDbSetMock(sampleData);
+        _mockUpdater = new Mock<IPropertyUpdater<TEntity>>();
 
-            var dbContextOptions = new DbContextOptions<NorthwindDbContext>();
-            _mockDbContext = new Mock<NorthwindDbContext>(dbContextOptions);
+        _mockDbContext
+            .Setup(expression: c => c.Set<TEntity>())
+            .Returns(_mockSet)
+            .Verifiable();
 
-            _mockUpdater = new Mock<IPropertyUpdater<TEntity>>();
+        _repository = new TestRepository<TEntity>(_mockDbContext.Object, _mockUpdater.Object);
+    }
 
-            _mockDbContext
-                .Setup(expression: c => c.Set<TEntity>())
-                .Returns(_mockSet)
-                .Verifiable();
+    [Test]
+    public async Task GetAllAsync_ReturnsAllEntities()
+    {
+        // Arrange
+        var expectedEntity = TestHelper.CreateCollectionEntity<TEntity>();
 
-            _repository = new TestRepository<TEntity>(_mockDbContext.Object, _mockUpdater.Object);
-        }
+        // Act
+        var actualEntity = await _repository.GetAllAsync();
 
-        [Test]
-        public async Task GetAllAsync_ReturnsAllEntities()
-        {
-            // Arrange
-            var expectedEntity = TestHelper.CreateCollectionEntity<TEntity>();
+        // Assert
+        Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(expectedEntity)));
+    }
 
-            // Act
-            var actualEntity = await _repository.GetAllAsync();
+    [Test]
+    public async Task GetByIdAsync_ReturnsEntityWithGivenId()
+    {
+        // Arrange
+        const int id = 1;
+        var expectedEntities = TestHelper.CreateCollectionEntity<TEntity>().FirstOrDefault(entity => entity.Id == id);
 
-            // Assert
-            Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(expectedEntity)));
-        }
+        // Act
+        var actualEntities = await _repository.GetByIdAsync(id);
 
-        [Test]
-        public async Task GetByIdAsync_ReturnsEntityWithGivenId()
-        {
-            // Arrange
-            const int id = 1;
-            var expectedEntities = TestHelper.CreateCollectionEntity<TEntity>().FirstOrDefault(entity => entity.Id == id);
+        // Assert
+        Assert.That(TestHelper.ToJson(actualEntities), Is.EqualTo(TestHelper.ToJson(expectedEntities)));
+    }
 
-            // Act
-            var actualEntities = await _repository.GetByIdAsync(id);
+    [Test]
+    public async Task AddAsync_WhenCalled_EntityIsAdded()
+    {
+        // Arrange
+        var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
 
-            // Assert
-            Assert.That(TestHelper.ToJson(actualEntities), Is.EqualTo(TestHelper.ToJson(expectedEntities)));
-        }
+        // Act
+        var actualEntity = await _repository.AddAsync(expectedEntity);
 
-        [Test]
-        public async Task AddAsync_WhenCalled_EntityIsAdded()
-        {
-            // Arrange
-            var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
+        // Assert
+        Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(expectedEntity)));
+    }
 
-            // Act
-            var actualEntity = await _repository.AddAsync(expectedEntity);
+    [Test]
+    public async Task UpdateFieldsAsync_WhenCalled_EntityIsUpdated()
+    {
+        // Arrange
+        var previousEntity = TestHelper.CreateNewEntity<TEntity>();
+        var updatedEntity = TestHelper.CreateNewEntity<TEntity>();
 
-            // Assert
-            Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(expectedEntity)));
-        }
+        // Act
+        var actualEntity = await _repository.UpdateFieldsAsync(updatedEntity, previousEntity);
 
-        [Test]
-        public async Task UpdateFieldsAsync_WhenCalled_EntityIsUpdated()
-        {
-            // Arrange
-            var previousEntity = TestHelper.CreateNewEntity<TEntity>();
-            var updatedEntity = TestHelper.CreateNewEntity<TEntity>();
+        // Assert
+        Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(previousEntity)));
+    }
 
-            // Act
-            var actualEntity = await _repository.UpdateFieldsAsync(updatedEntity, previousEntity);
+    [Test]
+    public void UpdateFieldsAsync_WhenCalledWithNullPreviousEntity_ThrowsArgumentNullException()
+    {
+        // Arrange
+        var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
 
-            // Assert
-            Assert.That(TestHelper.ToJson(actualEntity), Is.EqualTo(TestHelper.ToJson(previousEntity)));
-        }
+        // Assert
+        Assert.That(async () => await _repository.UpdateFieldsAsync(expectedEntity, previousEntity: null),
+            Throws.ArgumentNullException);
+    }
 
-        [Test]
-        public void UpdateFieldsAsync_WhenCalledWithNullPreviousEntity_ThrowsArgumentNullException()
-        {
-            // Arrange
-            var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
+    [Test]
+    public void UpdateFieldsAsync_WhenCalledWithNullUpdatedEntity_ThrowsArgumentNullException()
+    {
+        // Arrange
+        var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
 
-            // Assert
-            Assert.That(async () => await _repository.UpdateFieldsAsync(expectedEntity, previousEntity: null),
-                Throws.ArgumentNullException);
-        }
+        // Assert
+        Assert.That(async () => await _repository.UpdateFieldsAsync(updatedEntity: null, expectedEntity),
+            Throws.ArgumentNullException);
+    }
 
-        [Test]
-        public void UpdateFieldsAsync_WhenCalledWithNullUpdatedEntity_ThrowsArgumentNullException()
-        {
-            // Arrange
-            var expectedEntity = TestHelper.CreateNewEntity<TEntity>();
-
-            // Assert
-            Assert.That(async () => await _repository.UpdateFieldsAsync(updatedEntity: null, expectedEntity),
-                Throws.ArgumentNullException);
-        }
-
-        [Test]
-        public void AddAsync_WhenCalledWithNullTEntity_ThrowsArgumentNullException()
-        {
-            // Assert
-            Assert.That(async () => await _repository.AddAsync(entity: null), Throws.ArgumentNullException);
-        }
+    [Test]
+    public void AddAsync_WhenCalledWithNullTEntity_ThrowsArgumentNullException()
+    {
+        // Assert
+        Assert.That(async () => await _repository.AddAsync(entity: null), Throws.ArgumentNullException);
     }
 }
-
 
 public class TestRepository<TEntity> : BaseRepository<TEntity> where TEntity : BaseEntity
 {

@@ -1,6 +1,7 @@
 using System.Globalization;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
+using DemoWebApp.WebSite.Filters;
 using DemoWebApp.WebSite.Settings;
 using DemoWebApp.WebSite.ViewModels;
 using Mapster;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Options;
 
 namespace DemoWebApp.WebSite.Controllers;
 
+[ServiceFilter(typeof(LogActionFilter))]
 public class ProductController : Controller
 {
     private readonly IProductRepository _productRepository;

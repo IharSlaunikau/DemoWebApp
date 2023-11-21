@@ -1,10 +1,10 @@
+using CloudinaryDotNet;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
 using DemoWebApp.WebSite.Controllers;
+using DemoWebApp.WebSite.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using CloudinaryDotNet;
-using DemoWebApp.WebSite.ViewModels;
 
 namespace DemoWebApp.WebSite.Tests.Controllers;
 

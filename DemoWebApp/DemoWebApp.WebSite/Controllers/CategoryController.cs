@@ -2,13 +2,14 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using DemoWebApp.DAL.Interfaces;
 using DemoWebApp.DAL.Models;
+using DemoWebApp.WebSite.Filters;
 using DemoWebApp.WebSite.ViewModels;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DemoWebApp.WebSite.Controllers;
 
+[ServiceFilter(typeof(LogActionFilter))]
 public class CategoryController : Controller
 {
     const int BytesToSkip = 78;
@@ -32,7 +33,6 @@ public class CategoryController : Controller
         _cloudinary = cloudinary;
     }
 
-    [HttpGet]
     [HttpGet]
     public async Task<IActionResult> Index()
     {
@@ -73,7 +73,7 @@ public class CategoryController : Controller
         return NotFound();
     }
 
-    [HttpGet("{id}/editimage")]
+    [HttpGet("{id}/EditImage")]
     public async Task<IActionResult> EditImageGet([FromRoute] int id)
     {
         var category = await _categoryRepository.GetByIdAsync(id);
@@ -92,7 +92,8 @@ public class CategoryController : Controller
         return View(ViewNames.EditImage, editCategoryImageViewModel);
     }
 
-    [HttpGet("{id}/EditImage")]
+    [HttpPost("{id}/EditImage")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> EditImagePost([FromRoute] int id, [FromForm] CategoryViewModel model)
     {
         if (!ModelState.IsValid)
@@ -139,6 +140,6 @@ public class CategoryController : Controller
 
         await _categoryRepository.UpdateFieldsAsync(categoryToUpdate, (Category)previousCategory);
 
-        return RedirectToAction(nameof(Index), categoryToUpdate);
+        return RedirectToAction(ViewNames.Index, categoryToUpdate);
     }
 }
