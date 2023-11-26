@@ -1,4 +1,5 @@
 @using DemoWebApp.WebSite.ViewModels;
+@using DemoWebApp.WebSite.Models;
 @model ProductViewModel
 @{
     ViewData["Title"] = "Categories";
@@ -6,6 +7,12 @@
 }
 
 @{
+    ViewBag.Breadcrumbs = new[]
+    {
+        new BreadcrumbModel { Label = "Home", Url = new Uri(Url.Action("Index", "Home"), UriKind.Relative) },
+        new BreadcrumbModel { Label = "Products", Url = new Uri(Url.Action("Index", "Product"), UriKind.Relative) },
+        new BreadcrumbModel { Label = "Edit Product" }
+    };
     ViewData["Title"] = "Edit Product";
 }
 

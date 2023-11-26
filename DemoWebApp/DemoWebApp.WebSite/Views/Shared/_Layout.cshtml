@@ -36,23 +36,25 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+            {
+                @(await Component.InvokeAsync("Breadcrumbs", new { items = ViewBag.Breadcrumbs }))
+            }
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted mt-3">
-        <footer class="border-top footer text-muted mt-3">
-            @RenderSection("Footers", false)
-            @if (ViewContext.RouteData.Values["controller"].ToString() == "Category" && !IsSectionDefined("Footers"))
-            {
-                <div class="container mt-3">
-                    <p><big><strong>Warning: You can’t edit categories images</strong></big>.</p>
-                </div>
-            }
+        @RenderSection("Footers", false)
+        @if (ViewContext.RouteData.Values["controller"].ToString() == "Category" && !IsSectionDefined("Footers"))
+        {
             <div class="container mt-3">
-                <p>&copy; 2023 - DemoWebApp.WebSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+                <p><big><strong>Warning: You can’t edit categories images</strong></big>.</p>
             </div>
-        </footer>
+        }
+        <div class="container mt-3">
+            <p>&copy; 2023 - DemoWebApp.WebSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+        </div>
     </footer>
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>

@@ -1,0 +1,31 @@
+@using DemoWebApp.WebSite.Models
+@model IEnumerable<BreadcrumbModel>
+
+@section Styles
+    {
+    <style>
+        .breadcrumb {
+            margin-bottom: 0;
+        }
+
+            .breadcrumb li:not(:last-child)::after {
+                content: ">";
+            }
+    </style>
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        @foreach (var item in Model)
+        {
+            if (item.Url != null)
+            {
+                <li class="breadcrumb-item"><a href="@item.Url">@item.Label</a></li>
+            }
+            else
+            {
+                <li class="breadcrumb-item active" aria-current="page">@item.Label</li>
+            }
+        }
+    </ol>
+</nav>

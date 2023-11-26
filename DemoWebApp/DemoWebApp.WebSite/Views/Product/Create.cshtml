@@ -6,6 +6,12 @@
 }
 
 @{
+    ViewBag.Breadcrumbs = new[]
+    {
+        new BreadcrumbModel { Label = "Home", Url = new Uri(Url.Action("Index", "Home"), UriKind.Relative) },
+        new BreadcrumbModel { Label = "Products", Url = new Uri(Url.Action("Index", "Product"), UriKind.Relative) },
+        new BreadcrumbModel { Label = "Create Product" }
+    };
     ViewData["Title"] = "Create Product";
 }
 

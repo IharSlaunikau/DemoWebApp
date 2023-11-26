@@ -1,0 +1,17 @@
+@model IEnumerable<BreadcrumbModel>
+
+<ol class="breadcrumb">
+    @foreach (var item in Model)
+    {
+        <li class="breadcrumb-item @(item.Url == null ? "active" : "")">
+            @if (item.Url != null)
+            {
+                <a href="@item.Url">@item.Label</a>
+            }
+            else
+            {
+                @item.Label
+            }
+        </li>
+    }
+</ol>
