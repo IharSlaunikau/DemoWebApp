@@ -1,19 +1,11 @@
 @using DemoWebApp.WebSite.ViewModels;
 @model ProductViewModel
 @{
-    ViewData["Title"] = "Categories";
+    ViewData["Title"] = "Create Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    ViewBag.Breadcrumbs = new[]
-    {
-        new BreadcrumbModel { Label = "Home", Url = new Uri(Url.Action("Index", "Home"), UriKind.Relative) },
-        new BreadcrumbModel { Label = "Products", Url = new Uri(Url.Action("Index", "Product"), UriKind.Relative) },
-        new BreadcrumbModel { Label = "Create Product" }
-    };
-    ViewData["Title"] = "Create Product";
-}
+@await Component.InvokeAsync("Breadcrumb")
 
 <div class="container">
     <h2 class="mb-4">Create Product</h2>

@@ -1,17 +1,20 @@
+@using DemoWebApp.WebSite.Models
 @model IEnumerable<BreadcrumbModel>
 
-<ol class="breadcrumb">
-    @foreach (var item in Model)
-    {
-        <li class="breadcrumb-item @(item.Url == null ? "active" : "")">
-            @if (item.Url != null)
-            {
-                <a href="@item.Url">@item.Label</a>
-            }
-            else
-            {
-                @item.Label
-            }
-        </li>
-    }
-</ol>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        @foreach (var breadcrumb in Model)
+        {
+            <li class="breadcrumb-item @(breadcrumb.Url == null ? "active" : "")">
+                @if (breadcrumb.Url != null)
+                {
+                    <a href="@breadcrumb.Url">@breadcrumb.Label</a>
+                }
+                else
+                {
+                    <span>@breadcrumb.Label</span>
+                }
+            </li>
+        }
+    </ol>
+</nav>

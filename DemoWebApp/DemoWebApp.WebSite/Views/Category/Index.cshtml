@@ -5,13 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    ViewBag.Breadcrumbs = new[]
-    {
-        new BreadcrumbModel { Label = "Home", Url = new Uri(Url.Action("Index", "Home"), UriKind.Relative) },
-        new BreadcrumbModel { Label = "Categories" }
-    };
-}
+@await Component.InvokeAsync("Breadcrumb")
 
 @section Footers
     {

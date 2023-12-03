@@ -6,14 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    ViewBag.Breadcrumbs = new[]
-    {
-        new BreadcrumbModel { Label = "Home", Url = new Uri(Url.Action("Index", "Home"), UriKind.Relative) },
-        new BreadcrumbModel { Label = "Categories", Url = new Uri(Url.Action("Index", "Category"), UriKind.Relative) },
-        new BreadcrumbModel { Label = "Edit Image" }
-    };
-}
+@await Component.InvokeAsync("Breadcrumb")
 
 <h2>Edit Image for @Model.CategoryName</h2>
 
