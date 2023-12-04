@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@await Component.InvokeAsync("Breadcrumb")
+@(await Component.InvokeAsync("Breadcrumb", new { items = ViewBag.Breadcrumbs }))
 
 <div class="container">
     <h2 class="mb-4">Edit Product</h2>
